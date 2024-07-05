@@ -1,0 +1,28 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    overflow: hidden;
+    background: #f8f9fa;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff; /* Blue color */
+}
+
+.container {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.btn {
+    margin-top: 10px;
+}
+
+#mynetwork {
+    border: 1px solid #ccc;
+    background: white;
+    height: 400px; /* Adjusted height */
+}
