@@ -13,14 +13,16 @@
     <header>
         <h1>TSP Visualization</h1>
     </header>
+    <div id="controls">
+        <button onclick="addNode()">Add Node</button>
+        <button onclick="deleteNode()">Delete Node</button>
+        <button onclick="addEdge()">Add Edge</button>
+        <button onclick="deleteEdge()">Delete Edge</button>
+        <button onclick="tsp1()">TSP Exact</button>
+        <button onclick="tsp2()">TSP Backtracking</button>
+        <button onclick="tsp3()">TSP Greedy</button>
+    </div>
     <div id="mynetwork"></div>
-    <button onclick="addNode()">Add Node</button>
-    <button onclick="deleteNode()">Delete Node</button>
-    <button onclick="addEdge()">Add Edge</button>
-    <button onclick="deleteEdge()">Delete Edge</button>
-    <button onclick="tsp1()">TSP Exact</button>
-    <button onclick="tsp2()">TSP Backtracking</button>
-    <button onclick="tsp3()">TSP Greedy</button>
     <div class="result" id="exhaustive-result">
         <p>Exact TSP Cost: <span id="exhaustive-cost"></span></p>
         <p>Exact TSP Time: <span id="exhaustive-time"></span> ms</p>
