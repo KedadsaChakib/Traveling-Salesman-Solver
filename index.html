@@ -2,38 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TSP Visualization</title>
+    <title>TSP Solver</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="network.js" defer></script>
     <script src="pvc.js" defer></script>
     <script src="ui.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>TSP Visualization</h1>
+        <h1>TSP Solver</h1>
     </header>
-    <div id="controls">
-        <button onclick="addNode()">Add Node</button>
-        <button onclick="deleteNode()">Delete Node</button>
-        <button onclick="addEdge()">Add Edge</button>
-        <button onclick="deleteEdge()">Delete Edge</button>
-        <button onclick="tsp1()">TSP Exact</button>
-        <button onclick="tsp2()">TSP Backtracking</button>
-        <button onclick="tsp3()">TSP Greedy</button>
-    </div>
-    <div id="mynetwork"></div>
-    <div class="result" id="exhaustive-result">
-        <p>Exact TSP Cost: <span id="exhaustive-cost"></span></p>
-        <p>Exact TSP Time: <span id="exhaustive-time"></span> ms</p>
-    </div>
-    <div class="result" id="backtracking-result">
-        <p>Backtracking TSP Cost: <span id="backtracking-cost"></span></p>
-        <p>Backtracking TSP Time: <span id="backtracking-time"></span> ms</p>
-    </div>
-    <div class="result" id="greedy-result">
-        <p>Greedy TSP Cost: <span id="greedy-cost"></span></p>
-        <p>Greedy TSP Time: <span id="greedy-time"></span> ms</p>
-    </div>
+    <main>
+        <div id="main-content">
+            <div id="left-column">
+                <section id="controls">
+                    <div class="control-group">
+                        <label for="matrix-dim">Number of Nodes:</label>
+                        <input type="range" id="matrix-dim" min="1" max="13" value="5" oninput="updateSliderValue(); generateMatrixInput();" />
+                        <span id="slider-value">5</span>
+                    </div>
+                    <div id="matrix-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <!-- Dynamic header based on number of nodes -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Dynamic rows based on number of nodes -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <button id="load-matrix" onclick="loadMatrix()">Show Graph</button>
+            </div>
+            <div id="right-column">
+                <section id="mynetwork"></section>
+            </div>
+        </div>
+
+        <section id="actions">
+            <button onclick="tsp1()">TSP Exact</button>
+            <button onclick="tsp2()">TSP Backtracking</button>
+            <button onclick="tsp3()">TSP Greedy</button>
+        </section>
+
+        <section id="results">
+            <div class="result">
+                <p>Exact TSP Cost: <span id="exhaustive-cost"></span></p>
+                <p>Exact TSP Time: <span id="exhaustive-time"></span> ms</p>
+            </div>
+            <div class="result">
+                <p>Backtracking TSP Cost: <span id="backtracking-cost"></span></p>
+                <p>Backtracking TSP Time: <span id="backtracking-time"></span> ms</p>
+            </div>
+            <div class="result">
+                <p>Greedy TSP Cost: <span id="greedy-cost"></span></p>
+                <p>Greedy TSP Time: <span id="greedy-time"></span> ms</p>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
